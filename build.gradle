@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'diegog.countries.api'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main.java.srcDir 'src/main'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '4.0.0'
+    compile group: 'org.json', name: 'json', version: '20171018'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+}
+
+jar {
+    manifest.attributes 'Main-Class': 'diegog.countries.api.main.countries'
+    from configurations.compile.collect { zipTree it }
+}
