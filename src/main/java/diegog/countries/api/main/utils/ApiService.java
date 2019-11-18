@@ -1,4 +1,4 @@
-package diegog.countries.api.main;
+package diegog.countries.api.main.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import diegog.countries.api.main.utils.Logger;

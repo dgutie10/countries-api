@@ -1,9 +1,10 @@
 package diegog.countries.api.main;
 
+import diegog.countries.api.main.utils.ApiService;
 import diegog.countries.api.main.utils.Logger;
 import diegog.countries.api.model.Country;
 import org.apache.commons.lang3.text.WordUtils;
-import java.io.Console;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -84,7 +85,8 @@ public class countries {
 
     public String getInputFromUser(String message){
         System.out.print(message + ": ");
-        return input.next().trim();
+        return input.nextLine()
+                .trim();
     }
 
     public static void  promptEnterCommand(){
